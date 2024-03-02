@@ -1,0 +1,200 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPrpL3CUc40mjuaytqrpkMK",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/inforahman1/Java-Networking/blob/master/A%20random%20sample%20of%2064%20observations%20from%20a%20normal%20population%20provided%20a%20standard%20deviation%20of%2020.%20Find%20the%20critical%20values%20of%20the%20test%20for%20which%20the%20null%20hypothesis%20Ho%3A%CE%BC%20%3D%20100%20against%20the%20alternative%20Ha%3A%CE%BC%20%E2%89%A0%20100%20will%20be%20rejected%20at%205%20percent%20level%20of%20significance.%20Determine%20also%20the%20acceptance%20region.\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rQN35wXJrTmR",
+        "outputId": "5651ccee-e74b-4ff3-e24f-83f55f402920"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Critical values:\n",
+            "Lower critical value: 95.10009003864987\n",
+            "Upper critical value: 104.89990996135013\n",
+            "\n",
+            "Acceptance region:\n",
+            "μ ∈ (95.10009003864987, 104.89990996135013)\n"
+          ]
+        }
+      ],
+      "source": [
+        "# prompt: A random sample of 64 observations from a normal population provided a standard deviation of 20. Find the critical values of the test for which the null hypothesis Ho:μ = 100 against the alternative Ha:μ ≠ 100 will be rejected at 5 percent level of significance. Determine also the acceptance region.\n",
+        "\n",
+        "import numpy as np\n",
+        "from scipy.stats import norm\n",
+        "\n",
+        "# Given information\n",
+        "n = 64\n",
+        "s = 20\n",
+        "alpha = 0.05\n",
+        "\n",
+        "# Calculate the critical values\n",
+        "z_alpha_2 = norm.ppf(1 - alpha / 2)\n",
+        "z_alpha = norm.ppf(1 - alpha)\n",
+        "\n",
+        "# Calculate the critical values for the sample mean\n",
+        "critical_value_lower = 100 - z_alpha_2 * s / np.sqrt(n)\n",
+        "critical_value_upper = 100 + z_alpha_2 * s / np.sqrt(n)\n",
+        "\n",
+        "# Print the critical values and the acceptance region\n",
+        "print(\"Critical values:\")\n",
+        "print(f\"Lower critical value: {critical_value_lower}\")\n",
+        "print(f\"Upper critical value: {critical_value_upper}\")\n",
+        "\n",
+        "print(\"\\nAcceptance region:\")\n",
+        "print(f\"μ ∈ ({critical_value_lower}, {critical_value_upper})\")\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: A random sample of 64 observations from a normal population provided a standard deviation of 20. Find the critical values of the test for which the null hypothesis Ho:μ = 100 against the alternative Ha:μ ≠ 100 will be rejected at 5 percent level of significance. Determine also the acceptance region.\n",
+        "\n",
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "F6pweS8bsECB"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from scipy.stats import norm"
+      ],
+      "metadata": {
+        "id": "H3QiQBEnsPAv"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Give Information\n",
+        "n = 64\n",
+        "s = 20\n",
+        "alpha = 0.05"
+      ],
+      "metadata": {
+        "id": "08WZ989esVKE"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Calculate the critical values\n",
+        "z_alpha_2 = norm.ppf(1 - alpha / 2)\n",
+        "z_alpha = norm.ppf(1 - alpha)"
+      ],
+      "metadata": {
+        "id": "qKOXjxbIsmZ9"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Calculate the critical values for the sample mean\n",
+        "critical_value_lower = 100 - z_alpha_2 * s / np.sqrt(n)\n",
+        "critical_value_upper = 100 + z_alpha_2 * s / np.sqrt(n)"
+      ],
+      "metadata": {
+        "id": "1CLDljYFtCSd"
+      },
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Print the critical values and the acceptance region\n",
+        "print(\"Critical values:\")\n",
+        "print(f\"Lower critical value: {critical_value_lower}\")\n",
+        "print(f\"Upper critical value: {critical_value_upper}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oR9iDBNnzhgp",
+        "outputId": "55aef891-14a0-4d58-d8e4-cc46f3a6a428"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Critical values:\n",
+            "Lower critical value: 95.10009003864987\n",
+            "Upper critical value: 104.89990996135013\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nAcceptance region:\")\n",
+        "print(f\"μ ∈ ({critical_value_lower}, {critical_value_upper})\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vGhsFIsfzlsm",
+        "outputId": "83080948-d032-42b0-d978-62d55282b230"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Acceptance region:\n",
+            "μ ∈ (95.10009003864987, 104.89990996135013)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
